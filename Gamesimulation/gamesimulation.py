@@ -38,8 +38,8 @@ ACCOUNT_NAME = 'ada1d5dc-2d9c-4bdb-8098-eb1814bea372-bluemix'
 
 # Pubnub publish subscribe credentials
 # Refer Step 4 under Gamesimulation in README file in repo root folder
-pub_key = 'pub-c-578b72c9-0ca2-4429-b7d4-313bbdf9b335'
-sub_key = 'sub-c-471f5e36-e1ef-11e6-ac69-0619f8945a4f'
+pub_key = 'pub-c-dd56bf78-3a88-4f6a-a7a4-c1b078b82bf6'
+sub_key = 'sub-c-266f139a-29c3-11e7-a9ec-0619f8945a4f'
 scoreboardlivepubchannel = 'Gameplaylive'
 
 # Initialisation of pubnub
