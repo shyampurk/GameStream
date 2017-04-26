@@ -6,35 +6,71 @@ import sys
 
 teams = ["Cleveland Cavaliers","Toronto Raptors"]
 
+'''****************************************************************************************
+Function Name 	:	error
+Description		:	If error in the channel, prints the error
+Parameters 		:	message - error message
+****************************************************************************************'''
+def error(message):
+    print("ERROR : " + str(message))
+
+'''****************************************************************************************
+Function Name 	:	reconnect
+Description		:	Responds if server connects with pubnub
+Parameters 		:	message
+****************************************************************************************'''
+def reconnect(message):
+    print("RECONNECTED")
+
+'''****************************************************************************************
+Function Name 	:	disconnect
+Description		:	Responds if server disconnects from pubnub
+Parameters 		:	message
+****************************************************************************************'''
+def disconnect(message):
+    print("DISCONNECTED")
+
+
+'''****************************************************************************************
+Function Name 	:   hide
+Description		:	This function will hide the statistics text from the screen
+Parameters 		:	None
+****************************************************************************************'''
 def hide():
 	global screen
 	screen.refresh()
 	screen.clear()
-	
+'''****************************************************************************************
+Function Name 	:   stat
+Description		:	This function will help to show the statistics
+Parameters 		:	None
+****************************************************************************************'''
 def stat():
 	global screen
 	screen.refresh()
 	screen.addstr(scorestartpoint+13,30,"0 -Cleveland Cavaliers\n\t\t\t      1 -Toronto Raptors")
 	input = screen.getstr(height-6, 2)	
 	return input	
+'''****************************************************************************************
+Function Name 	:   stat
+Description		:	This function sends the message to block to get the statistics of 
+					the selected team
+Parameters 		:	Team choice (either 0 or 1)
+****************************************************************************************'''
 def pub(r):
 	global pubnub
 	try:
 		if int(r) in [0,1]:
-			pubnub.publish(channel = 'Gameplaystats',message = {"messagetype":"req","team":teams[int(r)]})
+			pubnub.publish(channel = statspubchannel,message = {"messagetype":"req","team":teams[int(r)]})
 	except Exception as e:
 		pass
 	
 
-def error(message):
-    print("ERROR : " + str(message))
-def connect(message):
-	print("CONNECTED")
-def reconnect(message):
-    print("RECONNECTED")
-def disconnect(message):
-    print("DISCONNECTED")
-
+'''****************************************************************************************
+Function Name 	:   show_param_live
+Description		:	This function will show the live score board on the screen
+Parameters 		:	live score message from the pubnub
+****************************************************************************************'''
 def show_param_live(param):
 	global screen
 	screen.refresh()
@@ -95,7 +131,12 @@ def show_param_live(param):
 		screen.addstr(scorestartpoint+12,20,param["Result"])
 		screen.addstr(height-6, 2,"")
 		screen.refresh()
-		
+
+'''****************************************************************************************
+Function Name 	:   show_param_stats
+Description		:	This function will show the statistics on the screen
+Parameters 		:	statistics message from the block
+****************************************************************************************'''
 def show_param_stats(param):
 	global screen
 	try:
@@ -155,43 +196,68 @@ def show_param_stats(param):
 	except curses.error as e:
 		print e	
 
+'''****************************************************************************************
+Function Name 	:   callbackLive
+Description		:	This pubnub function will receive messages of the live score
+Parameters 		:	message  - message came through the pubnub
+					channels - channel used for the communication
+****************************************************************************************'''
 def callbackLive(message,channels):
 	show_param_live(message["message"])
-
+'''****************************************************************************************
+Function Name 	:   callbackStats
+Description		:	This pubnub function will receive messages of the statistics
+Parameters 		:	message  - message came through the pubnub
+					channels - channel used for the communication
+****************************************************************************************'''
 def callbackStats(message,channels):
 	if (message["messagetype"] == "resp"):
 		show_param_stats(message)	
-
+'''****************************************************************************************
+Function Name 	:   pub_Init
+Description		:	This function is to initialise the pubnub and start subscribing for the messages
+Parameters 		:	None
+****************************************************************************************'''
 def pub_Init():
 	global pubnub
 	try:
 		pubnub = Pubnub(publish_key=pub_key,subscribe_key=sub_key) 
-		pubnub.subscribe(channels='Gameplaystats_resp', callback=callbackStats,error=error,
+		pubnub.subscribe(channels=statsresponsepubchannel, callback=callbackStats,error=error,
 		connect=connect, reconnect=reconnect, disconnect=disconnect)
-		pubnub.subscribe(channels='Gameplaylive', callback=callbackLive,error=error,
+		pubnub.subscribe(channels=livepubchannel, callback=callbackLive,error=error,
 		connect=connect, reconnect=reconnect, disconnect=disconnect)
 	except Exception as e:
 		print e	
 
 	
-
+'''****************************************************************************************
+Function Name 	:   _main_
+Description		:	The progrm starts executing here.
+****************************************************************************************'''
 if __name__ == '__main__':
 
-	
+	# Pubnub publish subscribe credentials
+	# Refer Step 4 under Gamesimulation in README file in repo root folder
 	pub_key = 'pub-c-578b72c9-0ca2-4429-b7d4-313bbdf9b335'
 	sub_key = 'sub-c-471f5e36-e1ef-11e6-ac69-0619f8945a4f'
 	
+	statsresponsepubchannel = 'Gameplaystats_resp'
+	livepubchannel = 'Gameplaylive'
+	statspubchannel = 'Gameplaystats'
+	# calling the pubnub initialisation function
 	pub_Init()
 	time.sleep(5)
-	
+	# initialising the screen
 	screen = curses.initscr()
-		
+	# Getting the maximum height and width of the screen 
 	height, width = screen.getmaxyx()
+	# fixing the screen liveboard start point and statistics board start point
 	scorestartpoint = 5
 	statsstartpoint = scorestartpoint+15
 	
 
 	x = 0
+	# Listening to the key press on the screen
 	while x != ord('q'):
 		screen.clear()		
 		screen.border(0)

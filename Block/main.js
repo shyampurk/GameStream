@@ -1,12 +1,14 @@
-export default (request) => { 
-    const pubnub = require('pubnub');
-    const db = require('kvstore');
-    const xhr = require('xhr');
+export default (request) => {
+	 // Required modules  
+    const pubnub = require('pubnub'); // Pubnub for communication
+    const db = require('kvstore'); // kvstore to store the data
+    const xhr = require('xhr'); // xhr for REST calls
     
+    // Authorization for the REST call
+    // This Authorization we have to get it from the openwhisk cURL call
+    // Refer readme file step 11 under Open whisk creation
     var auth = 'Basic OGI2ZWY0NDUtYTUxOS00Yzg5LWJlMjktZjk5ZGNiOGUxYmVkOmMxN2NNVDVKcllOVmJHWUd5VU9vTHRyVmpPVTBaaHhielQ3NnJXakNvY3pFeU1yMEhxVm9LelltUnZvOGtwNDI=';
-    
-
-    
+        
     /*
     Name - broadcastMessage
     Description - Function used to send message to users via pubnub
@@ -16,8 +18,6 @@ export default (request) => {
     */ 
     function broadcastMessage(pubchannel,message){
 
-        // Broadcasting the Message to all the Users.
-        console.log(message);
         pubnub.publish({
         channel   : pubchannel,
         message   : message,
@@ -29,11 +29,7 @@ export default (request) => {
         }
     }); 
 
-    }   
-
-
-
-
+    }
 
     // http options for the rest call.
     const http_options = {
@@ -46,13 +42,18 @@ export default (request) => {
             "body":request.message
     };
     
-    const url = ('https://openwhisk.ng.bluemix.net/api/v1/namespaces/shyam@radiostud.io_M2M-Traffic-Control/actions/dashdbaccessnode?blocking=true');
+    // URL For the openwhisk
+    // You will get it from the openwhisk
+    // Refer readme file step 11 under Open whisk creation
+    const url = ('https://openwhisk.ng.bluemix.net/api/v1/namespaces/shyam@radiostud.io_M2M-Traffic-Control/actions/openwhisk_gamestats?blocking=true');
 
+    // xhr POST call.  
     return xhr.fetch(url,http_options).then((url_fetched_data) =>{
         var fetched_message_body = JSON.parse(url_fetched_data.body);
-        // request.message = fetched_message_body.response.result;
+        
         // Pubnub Publish channel on which we will broadcast the messages.
         var pubchannel = "Gameplaystats_resp";
+        // Calling broadcastMessage function to send the message to UI
         broadcastMessage(pubchannel,fetched_message_body.response.result);
         return request;
 
@@ -62,10 +63,6 @@ export default (request) => {
     });
 
     
-
-    // return request.ok();
-   
-
      
 };
 

@@ -46,26 +46,31 @@ Step 9 : You can see the result.<br>
 <br> To invoke this openwhisk action through a REST call.<br> 
 Step 10 : Click on the view REST Endpoint.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op9.png)
-Step 11 : Copy this cURL command, and extract Authorization and save it.<br>
+Step 11 : Copy this cURL command, save the Authorization and URL.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op10.png)
-Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 6.
+Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48.
 
 
-# Gamesimulatio
+# Gamesimulation
 
-Step 1 : pip install 'pubnub>=3.0.0'<br>
+Step 1 : pip install pubnub>=3.8.3 <br>
 Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)<br>
 Step 3 : From the Step 5 Under the section Cloudant DB creation, Enter the respective credentials in the
 [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
 
-USERNAME  - line number 20 <br>
-PASSWORD - line number 21 <br>
-ACCOUNT_NAME - line number 22 <br>
+USERNAME  - line number 45 <br>
+PASSWORD - line number 46 <br>
+ACCOUNT_NAME - line number 47 <br>
 
 Step 4 : Get the saved PubNub publish subscribe keys from the step 4 under Pubnub block creation from 
 [readme](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md) and Enter those keys in the [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
-pub_key - line number 24 <br>
-sub_key - line number 25 <br>
+pub_key - line number 50 <br>
+sub_key - line number 51 <br>
+
+
+# Openwhisk code
+Step 1 : From the step 5 under Cloudant db creation section , out of those saved credentials Enter the url in the [code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) line number 2.
+
 
 # UI
 
