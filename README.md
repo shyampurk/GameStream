@@ -53,7 +53,7 @@ Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Ga
 
 # Gamesimulation
 
-Step 1 : pip install pubnub>=3.8.3 <br>
+Step 1 : pip install pubnub==3.8.3 <br>
 Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)<br>
 Step 3 : From the Step 5 Under the section Cloudant DB creation, Enter the respective credentials in the
 [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
