@@ -30,6 +30,14 @@ Parameters 		:	message
 def disconnect(message):
     print("DISCONNECTED")
 
+'''****************************************************************************************
+Function Name 	:connect
+Description		:	Responds if server connects with pubnub
+Parameters 		:	message
+****************************************************************************************'''
+def connect(message):
+    print("CONNECTED")
+
 
 '''****************************************************************************************
 Function Name 	:   hide
@@ -108,7 +116,7 @@ def show_param_live(param):
 	# status bar
 	screen.addstr(height-4, 5, statusbarstr)
 	# title
-	title = "OpenWhisk-Block Basket Ball Game Simulation"
+	title = "Basket Ball Game Simulation"
 	# Rendering title
 	screen.addstr(scorestartpoint-1, 50, title)
 	screen.addstr(height-6, 2,"")
@@ -170,7 +178,7 @@ def show_param_stats(param):
 		screen.addstr(statsstartpoint+5,25,"Wins")
 		screen.addstr(statsstartpoint+5,35,"Losses")
 		screen.addstr(statsstartpoint+5,45,"Maxscore")
-		screen.addstr(statsstartpoint+5,60,"Winloss%")
+		screen.addstr(statsstartpoint+5,60,"Win%")
 
 		''' STATISTICS '''
 		# status bar
@@ -178,7 +186,7 @@ def show_param_stats(param):
 		# status bar
 		screen.addstr(height-4, 5, statusbarstr)
 		# title
-		title = "OpenWhisk-Block Basket Ball Game Simulation"
+		title = "Basket Ball Game Simulation"
 		# Rendering title
 		screen.addstr(scorestartpoint-1, 50, title)
 		screen.addstr(height-6, 2,"")
@@ -186,7 +194,10 @@ def show_param_stats(param):
 
 		screen.addstr(statsstartpoint+3,18,"TEAM   -- "+param["Team"])
 		screen.addstr(statsstartpoint+7,10,str(param["PlayedGames"]))
-		winlosspercn = round(param["WinLosspercentage"],2)
+		if type(param["Winpercentage"]) == float:
+			winlosspercn = round(param["Winpercentage"],2)
+		else:
+			winlosspercn = param["Winpercentage"]
 		screen.addstr(statsstartpoint+7,25,str(param["Win"]))
 		screen.addstr(statsstartpoint+7,35,str(param["Loss"]))
 		screen.addstr(statsstartpoint+7,45,str(param["Maxscore"]))
@@ -268,7 +279,7 @@ if __name__ == '__main__':
 		# status bar
 		screen.addstr(height-4, 5, statusbarstr)
 		# title
-		title = "OpenWhisk-Block Basket Ball Game Simulation"
+		title = "Basket Ball Game Simulation"
 		# Rendering title
 		screen.addstr(scorestartpoint-1, 50, title)
 		screen.addstr(height-6, 2,"")
