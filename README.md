@@ -65,6 +65,7 @@ ACCOUNT_NAME - line number 235 <br>
 
 Step 4 : Get the saved PubNub publish subscribe keys from the step 4 under Pubnub block creation from 
 [readme](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md) and Enter those keys in the [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
+
 pub_key - line number 239 <br>
 sub_key - line number 240 <br>
 
@@ -74,8 +75,15 @@ Steps you should follow before running the openwhisk program.
 
 Step 1 : From the above step 5 under "Cloudant db creation" section , out of those saved credentials Enter the url in the [code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
 
-url of the cloudant db - line number 5.<br>
+url - line number 5.<br>
 
+# Block code
+Steps you should follow before running the Block program.
+
+Step 1 : From the above step 11 under "Open whisk creation" the Authorization and the url you got, should enter in the [code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
+
+auth - line number 10. <br> 
+url - line number 48 <br>
 
 # UI code
 Steps you should follow before running the scoreboardUI program
