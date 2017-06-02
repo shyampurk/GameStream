@@ -57,7 +57,7 @@ Step 6 : Copy the [code](https://github.com/shyampurk/GameStream/blob/master/Ope
 
 To Test the newly created openwhisk action.
 
-Step 7 : Click on the Run this Action.<br>
+Step 7 : Click on the "Run this Action."
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op6.png)
 Step 8 :  Give the following the JSON input area<br>
 	{<br>
@@ -65,12 +65,13 @@ Step 8 :  Give the following the JSON input area<br>
 	}<br>
 and click on Run with this value.
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op7.png)
-Step 9 : You can see the result.<br>
+
+Step 9 : You can see the result.
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op8.png)
 
 To invoke this openwhisk action through a REST call.
 
-Step 10 : Click on the view REST Endpoint.<br>
+Step 10 : Click on the "View REST Endpoint."
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op9.png)
 
 Step 11 : Copy this cURL command, save the URL & Authorization parameter values from the cURL command.<br>
