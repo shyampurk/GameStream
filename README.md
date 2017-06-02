@@ -95,17 +95,22 @@ You need to make a note of the following credentials generated from the Cloudant
 Before deploying, you need to add these credentials at specific places in the application code as guided below. 
 
 ## Simulation Code Configuration
-Steps you should follow before running the game simulation and UI script.
+Steps you should follow before running the game simulation and UI script. 
 
-### Game Simulation Script config
+## Python Libraries
 
-Before running the game simulation script make sure to follow these steps.
+Both the scripts depend on a few python libraries. You can install them using the pip utility.
 
 Step 1 : pip install pubnub==3.8.3
 
 Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)
 
-Step 3 : Edit the following variable's values as per "Cloudant service credentials" in the
+### Game Simulation Script config
+
+Before running the game simulation script make sure to update the code .
+
+
+1.  Edit the following variable's values as per "Cloudant service credentials" in the
 [game simulation code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
 
 USERNAME  - line number 233
@@ -114,7 +119,7 @@ PASSWORD - line number 234
 
 ACCOUNT_NAME - line number 235
 
-Step 4 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" 
+2. Edit the following variable's values as per "PubNub Publish and Subscribe Key" 
 
 pub_key - line number 239 
 
@@ -122,9 +127,9 @@ sub_key - line number 240
 
 
 ### Terminal UI Script config 
-Steps you should follow before running the terminal UI program
+Before running the UI scoreboard script make sure to update the code .
 
-Step 1 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [UI scoreboard code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
+Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [UI scoreboard code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
 
 pub_key - line number 252 
 
@@ -138,7 +143,7 @@ Steps you should follow to update the OpenWhisk and BLOCK code before launching 
 ### Openwhisk Config
 
 
-Step 1 : Edit the following variable's values as per "Cloudant service credentials" in the [OpenWhisk action code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
+Edit the following variable's values as per "Cloudant service credentials" in the [OpenWhisk action code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
 
 url - line number 5
 
