@@ -1,11 +1,13 @@
 # Gamestream Event Handler for PubNub BLOCKS
 
-# Pubnub block creation.
+# Pubnub BLOCK creation.
 
-# Gameplaystats Block
+We have two BLOCKs in this application. One handles the stats  (Gameplaystats) and the other handles the live score (Gameplaylive).
 
 
-Step 1 : Login to the Pubnub account with the valid credentials.
+## Gameplaystats BLOCK
+
+Step 1 : Login to your Pubnub account with the valid credentials.
 
 Step 2 : Click the "CREATE NEW APP" by giving a name to your APP.
 
@@ -19,53 +21,58 @@ You can see the Demo keyset for the new application created.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb3.png)         
 
-Step 4 : Click on the Demo keyset and click on the Blocks (on the left side).
+Step 4 : Click on the Demo keyset and click on the "BLOCKS" (on the left side).
 
 Save the PubNub publish subscribe keys.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb4.png)
 
 
-Step 5 : Create a new Block by giving the block name and description to the block.
+Step 5 : Create a new BLOCK by giving the name and description.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb5.png)
 
 
-Step 6 : Create the Event Handler by clicking CREATE button at the bottom.
+Step 6 : Create the Event Handler by clicking "CREATE" button at the bottom.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb6.png)
 
-Step 7 : Give the Name of the Event handler, Channel to communicate with the block and the option of when block 
-code should execute(Before of After publish of the message).
+Step 7 : Give the Name of the Event handler, Channel to communicate with the BLOCK and the option of when BLOCK 
+code should execute(Before Publish or Fire).
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb7.png)
 
-Step 8 : Copy the block code in the text area from [here](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js)  and save it.
+Step 8 : Copy the BLOCK code in the text area from [here](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js)  and save it.
 
-Step 9 : Click on the Start block button(top right) to start the block.
+Step 9 : Click on the "Start block" button(top right) to start the BLOCK.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb8.png)
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb9.png)
 
-Your block code is now running              
+Your BLOCK code is now running              
 
-# Gameplaylive Block
 
-Step 1 : Create another Block by giving the block name and description to the block.
+## Gameplaylive BLOCK
+
+Follow the steps below the spawn the Gameplaylive BLOCK
+
+Step 1 : Create another Block by giving the BLOCK name and description.
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/b2_1.png)
 
-Step 2 : Create the Event Handler by clicking CREATE button at the bottom.
+Step 2 : Create the Event Handler by clicking "CREATE" button at the bottom.
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/b2_2.png)
-Step 3 : Give the Name of the Event handler, Channel to communicate with the block and the option of when block 
-code should execute(Before of After publish of the message).
+Step 3 : Give the Name of the Event handler, Channel to communicate with the "BLOCK" and the option of when block 
+code should execute(Before Publish or Fire).
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/b2_3.png)
 
-Step 4 : Click on the Start block button(top right) to start the block.
+Step 4 : Click on the "Start block" button(top right) to start the block.
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/b2_4.png)
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/b2_5.png)
 
 Your block code is now running.
+
+Note that for this block we use the default BLOCK code that just passes the live score traffic through it. No additional processing is done here. 
