@@ -6,7 +6,7 @@ export default (request) => {
     
     // Authorization for the REST call
     // This Authorization we have to get it from the openwhisk cURL call
-    // Refer readme file step 11 under Open whisk creation
+    // Edit the auth variable as per OpenWhisk credentials
     var auth = 'Basic OGI2ZWY0NDUtYTUxOS00Yzg5LWJlMjktZjk5ZGNiOGUxYmVkOmMxN2NNVDVKcllOVmJHWUd5VU9vTHRyVmpPVTBaaHhielQ3NnJXakNvY3pFeU1yMEhxVm9LelltUnZvOGtwNDI=';
         
     /*
@@ -44,7 +44,7 @@ export default (request) => {
     
     // URL For the openwhisk
     // You will get it from the openwhisk
-    // Refer readme file step 11 under Open whisk creation
+    // Edit url parameter as per OpenWhisk credentials
     const url = ('https://openwhisk.ng.bluemix.net/api/v1/namespaces/shyam@radiostud.io_M2M-Traffic-Control/actions/openwhisk_gamestats?blocking=true');
 
     // xhr POST call.  
