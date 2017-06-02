@@ -95,7 +95,7 @@ Step 1 : pip install pubnub==3.8.3
 Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)
 
 Step 3 : Edit the following variable's values as per "Cloudant service credentials" in the
-[code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
+[game simulation code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
 
 USERNAME  - line number 233
 
@@ -113,7 +113,7 @@ sub_key - line number 240
 ## Terminal UI Script config 
 Steps you should follow before running the terminal UI program
 
-Step 1 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
+Step 1 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [UI scoreboard code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
 
 pub_key - line number 252 
 
