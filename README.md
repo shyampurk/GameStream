@@ -52,7 +52,7 @@ Step 4 : Click on the "Create an Action" button to create new action.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op3.png)
 Step 5 : Give a name to the action and select Nodejs Runtime. Select a blank slate to start with and then click on the "Create Action" button.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op4.png)
-Step 6 : Copy the [code](https://github.com/shyampurk/GameStream/blob/master/Openwhisk/main.js) and paste in the code area in the newly created action then click on "Make it live" to update the action. <br>
+Step 6 : Copy the [code](https://github.com/shyampurk/GameStream/blob/master/Openwhisk/main.js) and paste in the code area in the newly created action then click on "Make it live" to update the action. Update the code to point to your CLoudant DB instance (Refer sub section Openwhisk Config).
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op5.png)
 
 To Test the newly created openwhisk action.
@@ -73,10 +73,10 @@ To invoke this openwhisk action through a REST call.
 Step 10 : Click on the view REST Endpoint.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op9.png)
 
-Step 11 : Copy this cURL command, save the Authorization and URL.<br>
+Step 11 : Copy this cURL command, save the URL & Authorization parameter values from the cURL command.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op10.png)
 
-Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48. This is the BLOCK code that executes the stats request.
+
 
 ## PubNub BLOCK Creation
 
