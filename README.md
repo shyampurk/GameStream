@@ -77,14 +77,20 @@ Step 11 : Copy this cURL command, save the Authorization and URL.<br>
 Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48. This is the BLOCK code that executes the stats request.
 
 
-# Simulation Configuration
+# Application Credentials 
+
+You need to make a note of the following credentials generated from the Cloudant, OpenWhisk and PubNub services . 
+
+1. Cloudant service credentials : Refer Step 5 Under the section "Cloudant DB creation" above.
+
+2. OpenWhisk Authorization : Refer Step 11 under "Open whisk creation" for the generated Authorization and the url that you generated.
+
+3. PubNub Publish and Subscribe Key : Refer Step 4 under [Pubnub block creation](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md)
+
+Before deploying, you need to add these credentials at specific places in the application code as guided below. 
+
+# Simulation Code Configuration
 Steps you should follow before running the game simulation and UI script.
-
-You need to add the following config/credentials generated from the Cloudant and PubNub services. 
-
-1. Cloudant service credentials : Refer Step 5 Under the section "Cloudant DB creation"
-
-2. PubNub Publish and Subscribe Key : Refer Step 4 under [Pubnub block creation](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md)
 
 ## Game Simulation Script config
 
@@ -120,21 +126,24 @@ pub_key - line number 252
 sub_key - line number 253 
 
 
+# Microservice Code Configuration
 
-# Openwhisk code
-Steps you should follow before running the openwhisk program.
+Steps you should follow to update the OpenWhisk and BLOCK code before launching these services.
 
-Step 1 : From the above step 5 under "Cloudant db creation" section , out of those saved credentials Enter the url in the [code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
+## Openwhisk Config
 
-url - line number 5.<br>
 
-# Block code
-Steps you should follow before running the Block program.
+Step 1 : Edit the following variable's values as per "Cloudant service credentials" in the [OpenWhisk action code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
 
-Step 1 : From the above step 11 under "Open whisk creation" the Authorization and the url you got, should enter in the [code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
+url - line number 5
 
-auth - line number 10. <br> 
-url - line number 48 <br>
+## BLOCK code
+
+Step 1 : Edit the following variable's values as per "OpenWhisk Authorization" in the [BLOCK code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
+
+auth - line number 10
+
+url - line number 48 
 
 
 	
