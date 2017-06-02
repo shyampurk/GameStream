@@ -16,7 +16,9 @@ To test the application we have used two python scripts
 
 2. [ScoreboardUI.py](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py) : Terminal UI script for viewing the live score. This works only on UNIX/LINUX based terminals. WINDOWS is not supported. 
 
-## Service Setup
+Clone this repository and follow the steps below to setup the services. 
+
+# Service Setup
 
 Follow the steps below to setup IBM services for this application. 
 
@@ -76,8 +78,11 @@ Step 11 : Copy this cURL command, save the Authorization and URL.<br>
 
 Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48. This is the BLOCK code that executes the stats request.
 
+## PubNub BLOCK Creation
 
-# Application Credentials 
+Refer [Block Readme file](https://github.com/shyampurk/GameStream/blob/master/Block/README.md) for the steps to create the two BLOCKS that we have used in this application.
+
+# Application Credentials Setup
 
 You need to make a note of the following credentials generated from the Cloudant, OpenWhisk and PubNub services . 
 
@@ -89,10 +94,10 @@ You need to make a note of the following credentials generated from the Cloudant
 
 Before deploying, you need to add these credentials at specific places in the application code as guided below. 
 
-# Simulation Code Configuration
+## Simulation Code Configuration
 Steps you should follow before running the game simulation and UI script.
 
-## Game Simulation Script config
+### Game Simulation Script config
 
 Before running the game simulation script make sure to follow these steps.
 
@@ -116,7 +121,7 @@ pub_key - line number 239
 sub_key - line number 240 
 
 
-## Terminal UI Script config 
+### Terminal UI Script config 
 Steps you should follow before running the terminal UI program
 
 Step 1 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [UI scoreboard code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
@@ -126,18 +131,18 @@ pub_key - line number 252
 sub_key - line number 253 
 
 
-# Microservice Code Configuration
+## Microservice Code Configuration
 
 Steps you should follow to update the OpenWhisk and BLOCK code before launching these services.
 
-## Openwhisk Config
+### Openwhisk Config
 
 
 Step 1 : Edit the following variable's values as per "Cloudant service credentials" in the [OpenWhisk action code](https://github.com/shyampurk/Gamestream/blob/master/Openwhisk/main.js) 
 
 url - line number 5
 
-## BLOCK code
+### BLOCK code
 
 Step 1 : Edit the following variable's values as per "OpenWhisk Authorization" in the [BLOCK code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
 
