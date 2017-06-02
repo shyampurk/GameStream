@@ -1,7 +1,7 @@
 var Cloudant = require('cloudant');
 
-// use url that you got while creating the cloudantdb service
-// Refer step1 under Openwhisk code in README file in repo root folder.
+
+// Define url parameter that you obtained while creating the cloudantdb service
 var url = "https://ada1d5dc-2d9c-4bdb-8098-eb1814bea372-bluemix:138917f496921df5a30bf85f79d9d37315df23ace5f456a48b47998b4f8ca23e@ada1d5dc-2d9c-4bdb-8098-eb1814bea372-bluemix.cloudant.com";
 var cloudant = Cloudant(url);
 // selecting the database
