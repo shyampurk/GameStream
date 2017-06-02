@@ -12,9 +12,9 @@ Following cloud services are used
 
 To test the application we have used two python scripts 
 
-1. [gamesimulation.py](https://github.com/shyampurk/GameStream/blob/master/Gamesimulation/gamesimulation.py) : Simulates a 48 minute basketball game.
+1. [gamesimulation.py](https://github.com/shyampurk/GameStream/blob/master/Gamesimulation/gamesimulation.py) : Game simulation script that simulates a 48 minute basketball game.
 
-2. [ScoreboardUI.py](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py) : Terminal based UI for viewing the score. This works only on UNIX/LINUX based terminals. WINDOWS is not supported. 
+2. [ScoreboardUI.py](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py) : Terminal UI script for viewing the live score. This works only on UNIX/LINUX based terminals. WINDOWS is not supported. 
 
 ## Service Setup
 
@@ -77,23 +77,48 @@ Step 11 : Copy this cURL command, save the Authorization and URL.<br>
 Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48. This is the BLOCK code that executes the stats request.
 
 
-# Code COnfiguration
+# Simulation Configuration
 Steps you should follow before running the game simulation and UI script.
 
-Step 1 : pip install pubnub==3.8.3 <br>
-Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)<br>
-Step 3 : From the above Step 5 Under the section "Cloudant DB creation", Enter the respective credentials in the
+You need to add the following config/credentials generated from the Cloudant and PubNub services. 
+
+1. Cloudant service credentials : Refer Step 5 Under the section "Cloudant DB creation"
+
+2. PubNub Publish and Subscribe Key : Refer Step 4 under [Pubnub block creation](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md)
+
+## Game Simulation Script config
+
+Before running the game simulation script make sure to follow these steps.
+
+Step 1 : pip install pubnub==3.8.3
+
+Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)
+
+Step 3 : Edit the following variable's values as per "Cloudant service credentials" in the
 [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
 
-USERNAME  - line number 233 <br>
-PASSWORD - line number 234 <br>
-ACCOUNT_NAME - line number 235 <br>
+USERNAME  - line number 233
 
-Step 4 : Get the saved PubNub publish subscribe keys from the step 4 under Pubnub block creation from 
-[readme](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md) and Enter those keys in the [code](https://github.com/shyampurk/Gamestream/blob/master/Gamesimulation/gamesimulation.py)
+PASSWORD - line number 234 
 
-pub_key - line number 239 <br>
-sub_key - line number 240 <br>
+ACCOUNT_NAME - line number 235
+
+Step 4 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" 
+
+pub_key - line number 239 
+
+sub_key - line number 240 
+
+
+## Terminal UI Script config 
+Steps you should follow before running the terminal UI program
+
+Step 1 : Edit the following variable's values as per "PubNub Publish and Subscribe Key" in the [code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
+
+pub_key - line number 252 
+
+sub_key - line number 253 
+
 
 
 # Openwhisk code
@@ -111,13 +136,5 @@ Step 1 : From the above step 11 under "Open whisk creation" the Authorization an
 auth - line number 10. <br> 
 url - line number 48 <br>
 
-# UI code
-Steps you should follow before running the scoreboardUI program
-
-Step 1 : Get the saved PubNub publish subscribe keys from the step 4 under "Pubnub block creation" from 
-[readme](https://github.com/shyampurk/Gamestream/blob/master/Block/readme.md) and Enter those keys in the [code](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py)
-
-pub_key - line number 252 <br>
-sub_key - line number 253 <br>
 
 	
