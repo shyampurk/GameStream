@@ -229,13 +229,13 @@ def cloudantdb_update(HomeScore,GuestScore,Home,Guest):
 
 if __name__ == '__main__':
 	# Cloudant DB credentials
-	# Refer Step 3 under Gamesimulation in README file in repo root folder
+	# Modify the three variables below to update the Cloudant DB credentials
 	USERNAME = 'ada1d5dc-2d9c-4bdb-8098-eb1814bea372-bluemix'
 	PASSWORD = '138917f496921df5a30bf85f79d9d37315df23ace5f456a48b47998b4f8ca23e'
 	ACCOUNT_NAME = 'ada1d5dc-2d9c-4bdb-8098-eb1814bea372-bluemix'
 
 	# Pubnub publish subscribe credentials
-	# Refer Step 4 under Gamesimulation in README file in repo root folder
+	# Modify the two variables below to update the PubNub credentials
 	pub_key = 'pub-c-dd56bf78-3a88-4f6a-a7a4-c1b078b82bf6'
 	sub_key = 'sub-c-266f139a-29c3-11e7-a9ec-0619f8945a4f'
 	scoreboardlivepubchannel = 'Gameplaylive'
