@@ -52,7 +52,7 @@ Step 4 : Click on the "Create an Action" button to create new action.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op3.png)
 Step 5 : Give a name to the action and select Nodejs Runtime. Select a blank slate to start with and then click on the "Create Action" button.<br>
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op4.png)
-Step 6 : Copy the [code](https://github.com/shyampurk/GameStream/blob/master/Openwhisk/main.js) and paste in the code area in the newly created action then click on "Make it live" to update the action. Update the code to point to your Cloudant DB instance (Refer sub section Openwhisk Config).
+Step 6 : Copy the [code](https://github.com/shyampurk/GameStream/blob/master/Openwhisk/main.js) and paste in the code area in the newly created action. Update the code to point to your Cloudant DB instance (Refer sub section Openwhisk Config) and then click on "Make it live" to update the action.
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/openwhisk/op5.png)
 
 To Test the newly created openwhisk action.
