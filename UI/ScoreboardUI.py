@@ -248,7 +248,7 @@ Description		:	The progrm starts executing here.
 if __name__ == '__main__':
 
 	# Pubnub publish subscribe credentials
-	# Refer Step 4 under Gamesimulation in README file in repo root folder
+	# Update the two variables below to add PubNub publish and subscribe keys
 	pub_key = 'pub-c-dd56bf78-3a88-4f6a-a7a4-c1b078b82bf6'
 	sub_key = 'sub-c-266f139a-29c3-11e7-a9ec-0619f8945a4f'
 	
