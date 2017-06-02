@@ -1,6 +1,26 @@
 # Gamestream 
 
-# Cloudant DB creation.
+This code is the server backend for streaming live basketball scores and stats. It is based on the IBM Bluemix service stack and PubNub BLOCKs microservice. 
+
+Following cloud services are used
+
+1. IBM Cloudant DB
+
+2. IBM OpenWhisk
+
+3. PubNub BLOCKS
+
+To test the application we have used two python scripts 
+
+1. [gamesimulation.py](https://github.com/shyampurk/GameStream/blob/master/Gamesimulation/gamesimulation.py) : Simulates a 48 minute basketball game.
+
+2. [ScoreboardUI.py](https://github.com/shyampurk/GameStream/blob/master/UI/ScoreboardUI.py) : terminal based UI for viewing the score. This works only on UNIX/LINUX based terminals. WINDOWS is not supported. 
+
+## Service Setup
+
+Follow the steps below to setup IBM services for this application. 
+
+## Cloudant DB creation.
 <br>
 
 Step 1 : Login to the Bluemix account with the valid credentials.<br>
@@ -19,7 +39,7 @@ Step 7 : Click on the Create Database and Give a name for the Database then clic
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/cloudantdb/cl7.png)
 
 
-# Open whisk creation
+## Open whisk creation
 
 Step 1 : Login to the Bluemix account with valid credentials.<br>
 Step 2 : Goto catalog and under Apps select OpenWhisk.<br>
@@ -51,8 +71,8 @@ Step 11 : Copy this cURL command, save the Authorization and URL.<br>
 Step 12 : Paste this Authorization in the [code](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js) in line number 10, and URL in the line number 48.
 
 
-# Gamesimulation code
-Steps you should follow before running the Gamesimulation program.
+# Code COnfiguration
+Steps you should follow before running the game simulation and UI script.
 
 Step 1 : pip install pubnub==3.8.3 <br>
 Step 2 : pip install cloudant (https://github.com/cloudant/python-cloudant)<br>
