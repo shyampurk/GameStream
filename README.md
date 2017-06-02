@@ -20,7 +20,7 @@ Clone this repository and follow the steps below to setup the services.
 
 # Service Setup
 
-Follow the steps below to setup IBM services for this application. 
+
 
 ## Cloudant DB creation.
 <br>
