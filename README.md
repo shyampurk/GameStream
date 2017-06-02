@@ -149,7 +149,7 @@ url - line number 5
 
 ### BLOCK code
 
-Step 1 : Edit the following variable's values as per "OpenWhisk Authorization" in the [BLOCK code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
+Edit the following variable's values as per "OpenWhisk Authorization" in the [BLOCK code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
 
 auth - line number 10
 
