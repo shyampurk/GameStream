@@ -148,7 +148,7 @@ Edit the following variable's values as per "Cloudant service credentials" in th
 
 url - line number 5
 
-### BLOCK code
+### BLOCK config
 
 Edit the following variable's values as per "OpenWhisk Authorization" in the [BLOCK code](https://github.com/shyampurk/GameStream/blob/master/Block/main.js)
 
