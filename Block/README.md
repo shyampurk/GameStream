@@ -42,7 +42,7 @@ code should execute(Before Publish or Fire).
 
 ![alt-tag](https://github.com/shyampurk/Gamestream/blob/master/screenshots/Block/opb7.png)
 
-Step 8 : Copy the BLOCK code in the text area from [here](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js)  and save it.
+Step 8 : Copy the BLOCK code in the text area from [here](https://github.com/shyampurk/Gamestream/blob/master/Block/main.js). Update the code to point to your OpenWhisk instance REST API (Refer sub section BLOCK config under main README ) and save it.
 
 Step 9 : Click on the "Start block" button(top right) to start the BLOCK.
 
